@@ -1,6 +1,9 @@
 import uvicorn
 from fastapi import FastAPI
+<<<<<<< HEAD
 from fastapi.middleware.cors import CORSMiddleware
+=======
+>>>>>>> 2a57e16d093f1f060d2adeb69c60ec3bee72d88b
 from pydantic import BaseModel
 import joblib
 import pandas as pd
@@ -55,10 +58,6 @@ class FarmerData(BaseModel):
     district: str
     farming_method: str = "Organic" # Default to inorganic
     survey_number: int = None  # Optional field for special conditions
-    subdivision: str = None    # Optional field for special conditions
-
-# --- New: Organic/Inorganic Guidance System ---
-class CultivationGuidance:
     def __init__(self, organic_plan, inorganic_plan):
         self.organic_plan = organic_plan
         self.inorganic_plan = inorganic_plan
